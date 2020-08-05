@@ -88,10 +88,9 @@ header nav ul li.active::before{
     background: #fff;
 }
 
-header nav ul li .notification{
+header nav ul li .notification,
+#navbar-mobile ul li .notification{
     position: absolute;
-    top: -8px;
-    left: -7px;
     height: 17px;
     width: 17px;
     background-color: #5fb5f2;
@@ -101,11 +100,71 @@ header nav ul li .notification{
     border-radius: 50%;
 }
 
-header nav ul li .notification i{
+header ul li .notification{
+    top: -8px;
+    left: -7px;
+}
+
+#navbar-mobile ul li .notification{
+    top: -30%;
+    left: 30%;
+}
+
+header nav ul li .notification i,
+#navbar-mobile ul li .notification i{
     font-size: 10px;
     margin: 0!important;
 }
 
+/* mobile */
+#navbar-mobile{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background: #000;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar-mobile ul{
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-size: 20px;
+}
+
+#navbar-mobile ul li{
+    position: relative;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar-mobile ul li.active{
+    color: #5fb5f2;
+}
+
+#navbar-mobile ul li.active::before{
+    content: '';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    width: 100%;
+    z-index: 999;
+    background: #fff;
+}
 
 /* container app  */
 .container-app{
@@ -200,7 +259,7 @@ header nav ul li .notification i{
     bottom: -100%;
     left: 0;
     border-radius: 20px;
-    padding: 15px 10px;
+    padding: 15px 30px;
     color: #fff;
     transition: .6s all;
 }
@@ -246,6 +305,7 @@ header nav ul li .notification i{
     width: 80%;
     justify-content: center;
     margin: auto;
+    flex-wrap: wrap;
 }
 
 
@@ -305,6 +365,77 @@ header nav ul li .notification i{
 }
 
 
+@media(min-width:300px){
+    header{
+        display: none!important;
+    }
+
+    .container-app #card{
+        height: 350px;
+    }
+}
+
+@media(min-width:400px){
+    .container-app #card{
+        height: 400px;
+    }
+}
+
+@media(min-width:500px){
+    .container-app #card{
+        height: 450px;
+    }
+}
+
+@media(min-width:600px){
+    .container-app #card{
+        height: 300px;
+    }
+}
+
+@media(min-width:700px){
+    .container-app #card{
+        height: 370px;
+    }
+
+    .container-app{
+        width: 80%;
+    }
+}
+
+@media(min-width:800px){
+    .container-app #card{
+        height: 450px;
+    }
+
+    .container-app{
+        width: 70%;
+    }
+
+    
+    header{
+        display: flex!important;
+    }
+
+    #navbar-mobile{
+        display: none!important;
+    }
+}
+
+@media(min-width:1000px){
+    .container-app #card{
+        height: 300px;
+    }
+}
+
+@media(min-width:1100px){
+    .container-app #card{
+        height: 350px;
+    }
+}
+
+
+
 @media(min-width:1200px){
     .container-app{
         width: 900px;
@@ -312,5 +443,9 @@ header nav ul li .notification i{
 
     header nav{
         width: 1100px;
+    }
+
+    .container-app #card{
+        height: 270px;
     }
 }
